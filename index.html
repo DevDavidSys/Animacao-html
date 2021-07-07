@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animação HTML</title>
+        <style>
+            .tela{
+                width: 500px;
+                height: 500px;
+                background-color: aquamarine;
+                position: relative;
+            }
+            #quadrado{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="tela">
+            <div id="quadrado">
+
+
+            </div>
+        </div>
+        <script>
+            var jogador = document.getElementById('quadrado');
+            var positionX = 0;
+            var positionY = 0;
+            
+            setInterval(() => {moveFoward();}, 50);
+
+            function moveFoward(){
+                positionX = positionX+10;
+                positionY++;
+                if(positionX >400){
+                    positionX = 0;
+                }
+                if(positionY > 400){
+                    positionY = 0;
+                }
+                
+                
+                jogador.style.top = `${positionX}px`;
+                jogador.style.left = `${positionY}px`;
+                console.log(`x:${positionX} y:${positionY}`);
+            
+            }
+        </script>
+    </body>
+
+
+</html>
