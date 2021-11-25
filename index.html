@@ -6,50 +6,29 @@
             .tela{
                 width: 500px;
                 height: 500px;
-                background-color: aquamarine;
+                background-color: white;
+                border: 1px solid black;
                 position: relative;
             }
             #quadrado{
-                width: 100px;
-                height: 100px;
+                width: 10px;
+                height: 10px;
                 background-color: red;
                 position: absolute;
+                border-radius: 10px;
             }
 
         </style>
     </head>
     <body>
-        <div class="tela">
-            <div id="quadrado">
 
-
-            </div>
+        <div class="tela" id="tela">
+            <div class="quadrado" style="top: 10px; right: 10px;"></div>
         </div>
-        <script>
-            var jogador = document.getElementById('quadrado');
-            var positionX = 0;
-            var positionY = 0;
-            
-            setInterval(() => {moveFoward();}, 50);
-
-            function moveFoward(){
-                positionX = positionX+10;
-                positionY++;
-                if(positionX >400){
-                    positionX = 0;
-                }
-                if(positionY > 400){
-                    positionY = 0;
-                }
-                
-                
-                jogador.style.top = `${positionX}px`;
-                jogador.style.left = `${positionY}px`;
-                console.log(`x:${positionX} y:${positionY}`);
-            
-            }
-        </script>
+        <input type="button" onclick="anim2()"  value="restart">
+        
     </body>
+    <script src="anim2.js"></script>
 
 
 </html>
